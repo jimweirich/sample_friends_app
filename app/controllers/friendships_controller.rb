@@ -25,7 +25,7 @@ class FriendshipsController < ApplicationController
     friendship = Friendship.find(params[:id])
     user = friendship.user
     friend = friendship.friend
-    friendship.delete
+    friendship.destroy
     redirect_to user_path(user), notice: "#{friend.name} is no longer a friend of #{user.name}'s"
   end
 end
