@@ -11,6 +11,24 @@
   <span><%= @user.name %></span>
 </p>
 
+<h3>Friends</h3>
+<ul>
+  <% @user.friends.each do |friend| %>
+  <li>
+    <%= link_to friend.name, friend %>
+  </li>
+  <% end %>
+</ul>
+
+<h3>Acquaintances</h3>
+<ul>
+  <% @user.acquaintances.each do |acquaintance| %>
+  <li>
+    <%= link_to acquaintance.name, acquaintance %>
+  </li>
+  <% end %>
+</ul>
+
 <p class="actions">
   <%= link_to "Edit", edit_user_path(@user) %> |
   <%= link_to "Delete", user_path(@user), confirm: "Delete #{@user.name}?", method: :delete %>
