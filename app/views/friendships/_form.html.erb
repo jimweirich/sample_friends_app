@@ -1,0 +1,10 @@
+<%= form_for([@user, @friendship]) do |f| %>
+<p>
+  <%= f.label :friend %><br />
+  <%= f.text_field :friend %>
+</p>
+<p class="actions">
+  <%= f.submit %> |
+  <%= link_to "Cancel", user_path(@user) %>
+</p>
+<% end %>

@@ -1,0 +1,7 @@
+<% [:notice, :alert].each do |key| %>
+<% if flash[key] %>
+<p class="flash_<%= key %>">
+  <%= flash[key] %>
+</p>
+<% end %>
+<% end %>

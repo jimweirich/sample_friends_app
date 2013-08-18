@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
     order(:name)
   end
 
+  def add_friend(friend)
+    if friends.include?(friend)
+      false
+    else
+      friendships.create(friend: friend)
+    end
+  end
+
 end
