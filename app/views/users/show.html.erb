@@ -26,10 +26,10 @@
   <%= link_to "Add Friend", new_user_friendship_path(@user) %>
 </p>
 <ul>
-  <% @user.friendships.each do |friendship| %>
+  <% @user.friends.each do |friend| %>
   <li>
-    <%= link_to friendship.friend.name, friendship.friend %>
-    [ <%= link_to "Remove", friendship_path(friendship), method: :delete, confirm: "Remove #{friendship.friend.name} as a friend?" %> ]
+    <%= link_to friend.name, friend %>
+    [ <%= link_to "Remove", friendship_path(@user.friendship_for(friend)), method: :delete, confirm: "Remove #{friend.name} as a friend?" %> ]
   </li>
   <% end %>
 </ul>

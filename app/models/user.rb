@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def friendship_for(other)
+    friendships.where("friend_id = ?", other)
+  end
+
 end
