@@ -35,3 +35,13 @@ dan.friendships.create!(friend: charlie)
 
 eli.friendships.create!(friend: dan)
 eli.friendships.create!(friend: charlie)
+
+m1 = adam.messages.create!(body: "M1")
+m1.receivers.create(user: jim)
+m1.receivers.create(user: adam)
+
+m2 = bob.messages.create!(body: "M2")
+m2.receivers.create(user: jim)
+
+m3 = charlie.messages.create!(body: "M3")
+m3.receivers.create(user: jim)

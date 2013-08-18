@@ -7,6 +7,14 @@ class User < ActiveRecord::Base
   has_many :acquaintanceships, class_name: "Friendship", foreign_key: :friend_id, dependent: :destroy
   has_many :acquaintances, through: :acquaintanceships, source: :user, order: "users.name"
 
+  has_many :messages, dependent: :destroy
+  has_many :receivers, dependent: :destroy
+  has_many :all_incoming_messages, through: :receivers, source: :message
+
+  def incoming_messages
+    all_incoming_messages.where("messages.user_id in (?)", friends)
+  end
+
   def self.active_users
     order(:name)
   end
