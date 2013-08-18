@@ -11,6 +11,16 @@
   <span><%= @user.name %></span>
 </p>
 
+<h3>Messages</h3>
+<p class="actions">
+  <%= link_to "Send a Message", new_user_message_path(@user) %>
+</p>
+<ul>
+  <% @user.incoming_messages.each do |message| %>
+  <li>From <%= message.user.name %>: <%= message.body %> </li>
+  <% end %>
+</ul>
+
 <h3>Friends</h3>
 <p class="actions">
   <%= link_to "Add Friend", new_user_friendship_path(@user) %>

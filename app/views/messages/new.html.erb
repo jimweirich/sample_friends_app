@@ -1,0 +1,17 @@
+<header>
+  <h1>Message from <%= @user.name %></h1>
+</header>
+
+<%= form_for([@user, @message]) do |f| %>
+<p>
+  <%= label_tag :to %><br />
+  <%= text_field_tag :to %>
+</p>
+<p>
+  <%= f.label :body %><br />
+  <%= f.text_field :body %>
+</p>
+<p class="actions">
+  <%= f.submit %>
+</p>
+<% end %>
