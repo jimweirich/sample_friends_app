@@ -1,0 +1,17 @@
+<header>
+  <h1>User <%= @user.name %></h1>
+</header>
+
+<p class="actions">
+  <%= link_to "Back", users_path %>
+</p>
+
+<p>
+  <span>Name:</span>
+  <span><%= @user.name %></span>
+</p>
+
+<p class="actions">
+  <%= link_to "Edit", edit_user_path(@user) %> |
+  <%= link_to "Delete", user_path(@user), confirm: "Delete #{@user.name}?", method: :delete %>
+</p>

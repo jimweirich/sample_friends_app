@@ -5,3 +5,6 @@
 require File.expand_path('../config/application', __FILE__)
 
 Friends::Application.load_tasks
+
+task(:default).clear_prerequisites
+task :default => [:spec]
