@@ -2,4 +2,4 @@
 
 This is a sample friend messaging app created to play around with
 
-![https://github.com/jimweirich/sample_friends_app/blob/master/doc/models.png](hi)
+![class diagram](https://github.com/jimweirich/sample_friends_app/blob/master/doc/models.png "Class Diagram")
