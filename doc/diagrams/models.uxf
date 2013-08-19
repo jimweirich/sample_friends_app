@@ -12,7 +12,7 @@
     <panel_attributes>User
 --
 name
-incomin_messages</panel_attributes>
+incoming_messages</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -90,6 +90,7 @@ body</panel_attributes>
       <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
+m1=   * 
 all_messages</panel_attributes>
     <additional_attributes>80;160;80;50;230;50</additional_attributes>
   </element>
