@@ -1,4 +1,4 @@
-== Sample Friends App
+# Sample Friends App
 
 This is a sample friend messaging app created to play around with some
 query messages.
