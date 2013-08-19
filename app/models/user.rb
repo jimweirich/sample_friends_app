@@ -15,6 +15,22 @@ class User < ActiveRecord::Base
     all_incoming_messages.where("messages.user_id in (?)", friends)
   end
 
+  def incoming_messages_by_sql
+    sql = %{
+SELECT messages.* FROM messages
+  JOIN receivers   ON receivers.message_id = messages.id
+  JOIN friendships ON friendships.friend_id = messages.user_id
+ WHERE receivers.user_id = ? AND friendships.user_id = ?;
+}
+    Message.find_by_sql([sql, id, id])
+  end
+
+  def incoming_messages_by_ar
+    all_incoming_messages.
+      joins("JOIN friendships ON friendships.friend_id = messages.user_id").
+      where("friendships.user_id = ?", id)
+  end
+
   def self.active_users
     order(:name)
   end
